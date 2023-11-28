@@ -24,6 +24,7 @@
     right: 0;
     left: 0;
     bottom: 0;
+    z-index: 990;
 
     background: linear-gradient($darkBlue, transparent);
   }
@@ -33,6 +34,7 @@
     background-color: $white;
     padding-top: 1.0625rem;
     padding-bottom: 1.0625rem;
+    z-index: 999;
   }
 
   &__logo {
@@ -67,6 +69,7 @@
     margin-top: 1.5rem;
     padding: 1.625rem;
     border-radius: 5px;
+    z-index: 999;
 
     a {
       display: block;
