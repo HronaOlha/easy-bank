@@ -1,9 +1,5 @@
 .header {
   &.open {
-    // .overlay {
-    //   // display: block;
-    // }
-
     .header__toggle {
       > span:first-child {
         transform: rotate(45deg);
@@ -18,7 +14,6 @@
   }
 
   .overlay {
-    opacity: 0;
     position: fixed;
     top: 0;
     right: 0;
@@ -26,15 +21,19 @@
     bottom: 0;
     z-index: 990;
 
+    opacity: 0;
+
     background: linear-gradient($darkBlue, transparent);
   }
 
   nav {
     position: relative;
-    background-color: $white;
+    z-index: 999;
+
     padding-top: 1.0625rem;
     padding-bottom: 1.0625rem;
-    z-index: 999;
+
+    background-color: $white;
   }
 
   &__logo {
@@ -49,10 +48,11 @@
       display: block;
       width: 26px;
       height: 2px;
-      background-color: $darkBlue;
 
       transition: all 300ms ease-in-out;
       transform-origin: 0.2rem 0.1rem;
+
+      background-color: $darkBlue;
 
       &:not(:last-child) {
         margin-bottom: 5px;
@@ -64,16 +64,20 @@
     position: absolute;
     width: calc(100% - 3rem);
     left: 50%;
-    transform: translateX(-50%);
-    background: $white;
-    margin-top: 1.5rem;
-    padding: 1.625rem;
-    border-radius: 5px;
     z-index: 999;
+
+    transform: translateX(-50%);
+    margin-top: 1.5rem;
+    border-radius: 5px;
+    padding: 1.625rem;
+
+    background: $white;
 
     a {
       display: block;
+
       padding: 0.625rem;
+
       color: $darkBlue;
       text-align: center;
     }
@@ -82,9 +86,11 @@
   &__links {
     a {
       position: relative;
+
+      transition: color 300ms ease-in-out;
+
       font-size: $font-sm;
       color: $grayishBlue;
-      transition: color 300ms ease-in-out;
 
       &:not(:last-child) {
         margin-right: 32px;
@@ -92,16 +98,18 @@
 
       &::before {
         content: "";
-        display: block;
         position: absolute;
-        height: 5px;
         left: 0;
         right: 0;
         bottom: -30px;
 
-        background: linear-gradient(to right, $limeGreen, $brightCyan);
+        display: block;
         opacity: 0;
         transition: opacity 300ms ease-in-out;
+
+        height: 5px;
+
+        background: linear-gradient(to right, $limeGreen, $brightCyan);
       }
 
       &:hover {
